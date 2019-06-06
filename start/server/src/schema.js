@@ -3,14 +3,17 @@ const { gql } = require('apollo-server');
 const typeDefs = gql
 `
 type Query {
-    launches: [Launch]! # fetch all upcoming rocket launches
-    launch(id: ID!): Launch # fetch a launch by its ID
+    # fetch all upcoming rocket launches
+    launches: [Launch]! 
+    # fetch a launch by its ID
+    launch(id: ID!): Launch 
     me: User # fetch current user's data
 }
 
 type Launch {
     id: ID!
-    site: String # scalar types are primitives (like leaves of graph that all fields resolve to)
+    # scalar types are primitives (like leaves of graph that all fields resolve to)
+    site: String 
     mission: Mission
     rocket: Rocket 
     isBooked: Boolean!
